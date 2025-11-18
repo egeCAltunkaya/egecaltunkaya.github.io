@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Çağri Ege Altunkaya | Flight Control Researcher</title>
+    
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        /* --- Global Variables & Reset --- */
+        :root {
+            --primary-color: #006064; /* UPDATED: Deep Teal Theme */
+            --text-dark: #2c3e50;
+            --text-light: #5a6b7c;
+            --bg-light: #f4f7f6; /* Slightly warmer grey for teal theme */
+            --white: #ffffff;
+            --border-color: #dae1e7;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: var(--bg-light);
+        }
+
+        a {
+            text-decoration: none;
+            color: var(--primary-color);
+            transition: 0.3s;
+        }
+
+        a:hover {
+            text-decoration: underline;
+            color: #00363a; /* Darker shade of teal */
+        }
+
+        /* --- Layout Container --- */
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0; 
+            background: var(--white);
+            box-shadow: 0 0 20px rgba(0,0,0,0.05);
+            min-height: 100vh;
+        }
+
+        /* --- Header / Hero --- */
+        header {
+            text-align: center;
+            padding: 60px 20px 50px;
+            border-bottom: 1px solid var(--border-color);
+            background: linear-gradient(to bottom, #ffffff 0%, #f0fbfb 100%); /* Slight teal tint */
+        }
+
+        h1 {
+            font-size: 2.8rem;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            font-size: 0.95rem;
+            color: var(--text-light);
+            margin-top: 15px;
+        }
+
+        .contact-info i {
+            color: var(--text-dark);
+            margin-right: 5px;
+        }
+
+        /* Download Button Style */
+        .btn-download {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: var(--white);
+            padding: 10px 25px;
+            border-radius: 30px;
+            font-weight: 600;
+            margin-top: 30px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0, 96, 100, 0.2);
+        }
+
+        .btn-download:hover {
+            background-color: #00363a;
+            color: var(--white);
+            text-decoration: none;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(0, 96, 100, 0.3);
+        }
+
+        .btn-download i {
+            margin-right: 8px;
+        }
+
+        /* --- Sections --- */
+        section {
+            padding: 40px 30px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        section:last-child {
+            border-bottom: none;
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            color: var(--text-dark);
+            margin-bottom: 25px;
+            border-left: 5px solid var(--primary-color);
+            padding-left: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        h3 {
+            font-size: 1.1rem;
+            color: var(--text-light);
+            margin-top: 20px;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 5px;
+        }
+
+        /* --- Content Blocks --- */
+        .job-block, .edu-block, .project-block, .pub-block {
+            margin-bottom: 25px;
+        }
+
+        .block-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            flex-wrap: wrap;
+            margin-bottom: 5px;
+        }
+
+        .role {
+            font-weight: 700;
+            font-size: 1.1rem;
+            color: var(--text-dark);
+        }
+
+        .date {
+            font-style: italic;
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+
+        .company {
+            font-style: italic;
+            color: var(--primary-color);
+            font-weight: 500;
+            margin-bottom: 8px;
+            display: block;
+        }
+
+        ul {
+            list-style-type: disc;
+            margin-left: 20px;
+            color: var(--text-light);
+        }
+
+        li {
+            margin-bottom: 5px;
+        }
+
+        /* --- Skills --- */
+        .skill-category {
+            margin-bottom: 15px;
+        }
+
+        /* --- Projects Grid --- */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .project-card {
+            background: #fff;
+            border: 1px solid var(--border-color);
+            padding: 20px;
+            border-radius: 8px;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+            border-color: var(--primary-color);
+        }
+
+        .project-title {
+            font-weight: bold;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+            display: block;
+            font-size: 1.05rem;
+        }
+
+        /* --- Footer --- */
+        footer {
+            text-align: center;
+            padding: 30px;
+            font-size: 0.8rem;
+            color: var(--text-light);
+            background: var(--bg-light);
+            border-top: 1px solid var(--border-color);
+        }
+
+        /* --- Responsive --- */
+        @media (max-width: 600px) {
+            .block-header {
+                flex-direction: column;
+            }
+            h1 { font-size: 2.2rem; }
+            section { padding: 30px 20px; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <!-- HEADER -->
+    <header>
+        <h1>Çağri Ege Altunkaya</h1>
+        <div class="contact-info">
+            <span><i class="fas fa-map-marker-alt"></i> Istanbul, Turkey</span>
+            <span><i class="fas fa-envelope"></i> <a href="mailto:altunkaya16@itu.edu.tr">altunkaya16@itu.edu.tr</a></span>
+            <span><i class="fas fa-phone"></i> +90 537 337 47 97</span>
+            <span><i class="fab fa-linkedin"></i> <a href="https://www.linkedin.com/in/%C3%A7-ege-altunkaya">LinkedIn</a></span>
+            <span><i class="fas fa-graduation-cap"></i> <a href="https://scholar.google.com/citations?user=WB-BhZEAAAAJ&hl">Google Scholar</a></span>
+        </div>
+
+        <!-- DOWNLOAD CV BUTTON -->
+        <a href="cv.pdf" class="btn-download" download>
+            <i class="fas fa-file-pdf"></i> Download CV
+        </a>
+    </header>
+
+    <!-- SUMMARY -->
+    <section>
+        <h2>Summary</h2>
+        <p>Highly motivated Research Assistant specializing in advanced flight control design and safety-critical systems. Expertise includes applying nonlinear control theory, developing autopilots, and modeling complex aircraft systems. Proven ability to translate theoretical concepts into practical aerospace applications, supported by extensive research and industrial experience in stability and control.</p>
+    </section>
+
+    <!-- EDUCATION -->
+    <section>
+        <h2>Education</h2>
+        <div class="edu-block">
+            <div class="block-header">
+                <span class="role">M.Sc. in Defense Technologies, Autonomous Systems Track</span>
+                <span class="date">July 2023</span>
+            </div>
+            <span class="company">Istanbul Technical University</span>
+            <p><strong>GPA:</strong> 3.94/4.00</p>
+            <p style="font-size: 0.9rem; color: #666; margin-top: 5px;"><em>Dissertation: Online loss of control prevention of an agile aircraft: Lyapunov-based dynamic command saturation approach.</em></p>
+        </div>
+
+        <div class="edu-block">
+            <div class="block-header">
+                <span class="role">B.Sc. in Astronautical Engineering</span>
+                <span class="date">July 2021</span>
+            </div>
+            <span class="company">Istanbul Technical University</span>
+            <p><strong>GPA:</strong> 3.65/4.00 (Ranked 4th in Department)</p>
+        </div>
+    </section>
+
+    <!-- PUBLICATIONS -->
+    <section>
+        <h2>Publications</h2>
+        
+        <h3>Journal Articles</h3>
+
+        <div class="pub-block">
+            <p>
+                <strong>"Aircraft Stability and Safety: Practical Applications of Control Lyapunov and Barrier Functions"</strong><br>
+                Altunkaya, E. C., Çatak, A., Demir, M., Koyuncu, E., & Özkol, İ.<br>
+                <em>Journal of Guidance, Control, and Dynamics (2025)</em>
+            </p>
+        </div>
+
+        <div class="pub-block">
+            <p>
+                <strong>"Nuisance-Free Ground Collision Avoidance Design with Adaptive Exponential Control Barrier Functions"</strong><br>
+                Ç. Altunkaya, E., & Özkol, İ.<br>
+                <em>Journal of Guidance, Control, and Dynamics (2025), 1-15</em>
+            </p>
+        </div>
+
+        <div class="pub-block">
+            <p>
+                <strong>"Supermaneuver Control Using a Self-Tuning Strategy Without Thrust Vectoring"</strong><br>
+                Altunkaya, E. Ç., & Özkol, İ.<br>
+                <em>Journal of Guidance, Control, and Dynamics, 48(8), 1941-1952 (2025)</em>
+            </p>
+        </div>
+
+        <div class="pub-block">
+            <p>
+                <strong>"Stealth-Maneuver Generation for Non-Stealth Aircraft: A Control Barrier Function Approach"</strong><br>
+                Demir, M., Altunkaya, E. C., Çatak, A., Erol, F., Koyuncu, E., Özkol, İ., & Zengin, U.<br>
+                <em>Aerospace, 12(6), 478 (2025)</em>
+            </p>
+        </div>
+
+        <div class="pub-block">
+            <p>
+                <strong>"Loss-of-Control Prevention of an Agile Aircraft: Dynamic Command Saturation Approach"</strong><br>
+                Ç. Altunkaya, E., Çatak, A., Koyuncu, E., & Özkol, İ.<br>
+                <em>Journal of Guidance, Control, and Dynamics, 48(2), 424-436 (2025)</em>
+            </p>
+        </div>
+
+        <div class="pub-block">
+            <p>
+                <strong>"Stick-free flight stability problem revisited: A modeling and simulation approach"</strong><br>
+                Altunkaya, E. C., & Ozkol, I.<br>
+                <em>Aerospace, 10(3), 234 (2023)</em>
+            </p>
+        </div>
+
+        <div class="pub-block">
+            <p>
+                <strong>"Multi-parameter aerodynamic design of a horizontal tail using an optimization approach"</strong><br>
+                Altunkaya, E. C., & Ozkol, I.<br>
+                <em>Aerospace Science and Technology, 121, 107310 (2022)</em>
+            </p>
+        </div>
+
+        <h3>Conference Proceedings & Preprints</h3>
+
+        <div class="pub-block">
+            <p>
+                <strong>"Radar Cross-Section Shadowing: Novel Task Sharing Concept for Manned-Unmanned Teaming"</strong><br>
+                Catak, A., Altunkaya, E. C. et al.<br>
+                <em>2025 IEEE Conference on Control Technology and Applications (CCTA)</em>
+            </p>
+        </div>
+
+        <div class="pub-block">
+            <p>
+                <strong>"Control Barrier Functions as Autonomous Pilots for Low-Observability of Aircraft Against Mobile Radar"</strong><br>
+                Altunkaya, E. C., Catak, A. et al.<br>
+                <em>2025 IEEE Conference on Control Technology and Applications (CCTA)</em>
+            </p>
+        </div>
+
+        <div class="pub-block">
+            <p>
+                <strong>"Innovative Gain Reconfiguration for Active Fault-Tolerant Flight Control: Balance of Stability and Agility"</strong><br>
+                Altunkaya, E. C., Catak, A., Koyuncu, E., & Ozkol, I.<br>
+                <em>arXiv preprint arXiv:2406.01251 (2024)</em>
+            </p>
+        </div>
+
+        <div class="pub-block">
+            <p>
+                <strong>"Active Sidestick Control Integration for Enhanced Aircraft Flight Envelope Protection"</strong><br>
+                Altunkaya, Ç. E. et al.<br>
+                <em>IFAC-PapersOnLine, 58(30), 218-223 (2024)</em>
+            </p>
+        </div>
+
+        <div class="pub-block">
+            <p>
+                <strong>"Enhanced Flight Envelope Protection: A Novel Reinforcement Learning Approach"</strong><br>
+                Catak, A., Altunkaya, E. C. et al.<br>
+                <em>IFAC-PapersOnLine, 58(30), 207-212 (2024)</em>
+            </p>
+        </div>
+
+        <div class="pub-block">
+            <p>
+                <strong>"Auto-landing Fault-Tolerant Control System Design for a Light Aircraft"</strong><br>
+                Altunkaya, E. C., & Ozkol, I.<br>
+                <em>AIAA SCITECH 2023 Forum</em>
+            </p>
+        </div>
+    </section>
+
+    <!-- PROFESSIONAL EXPERIENCE -->
+    <section>
+        <h2>Professional Experience</h2>
+        
+        <div class="job-block">
+            <div class="block-header">
+                <span class="role">Research Assistant</span>
+                <span class="date">March 2022 -- Present</span>
+            </div>
+            <span class="company">Aviation Institute, Istanbul Technical University</span>
+            <ul>
+                <li>Conducting research on flight control systems, nonlinear control theory, robust/optimal control, fault-tolerant control, and safety-critical aerospace applications.</li>
+                <li>Mentored over 10 B.Sc. and M.Sc. students on their theses.</li>
+            </ul>
+        </div>
+
+        <div class="job-block">
+            <div class="block-header">
+                <span class="role">Flight Dynamics and Control Engineer</span>
+                <span class="date">Nov 2021 -- Feb 2022</span>
+            </div>
+            <span class="company">Turkish Aerospace (HURJET Project)</span>
+            <ul>
+                <li>Performed landing gear shimmy modeling and design optimization to minimize shimmy effects.</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- RESEARCH PROJECTS -->
+    <section>
+        <h2>Research Projects</h2>
+        <div class="projects-grid">
+            <div class="project-card">
+                <span class="project-title">Anti-skid Braking System Control</span>
+                <p>Designed an online runway friction coefficient estimation algorithm using Levenberg-Marquardt damped super-twisting sliding mode estimator with PSO to maximize braking efficiency.</p>
+                <span class="date" style="display:block; margin-top:10px; font-size:0.8rem;">Aug 2025 - Dec 2025</span>
+            </div>
+
+            <div class="project-card">
+                <span class="project-title">Image Based Visual Servoing</span>
+                <p>Developed visual servoing algorithms for autonomous drone engagement using control Lyapunov and barrier functions, integrating computer vision with flight control loops.</p>
+                <span class="date" style="display:block; margin-top:10px; font-size:0.8rem;">Feb 2025 - Present</span>
+            </div>
+
+            <div class="project-card">
+                <span class="project-title">Flight Envelope Protection</span>
+                <p>Designed conventional and innovative envelope protection algorithms using control barrier functions with real-time implementation of an active sidestick.</p>
+                <span class="date" style="display:block; margin-top:10px; font-size:0.8rem;">Jan 2024 - Jan 2025</span>
+            </div>
+
+            <div class="project-card">
+                <span class="project-title">UAV Multi-Disciplinary Optimization</span>
+                <p>Performed MDO for a subsonic UAV considering aerodynamics, flight performance, and static/dynamic flight stability.</p>
+                <span class="date" style="display:block; margin-top:10px; font-size:0.8rem;">Jan 2023 - June 2023</span>
+            </div>
+
+            <div class="project-card">
+                <span class="project-title">Very Light Aircraft Design</span>
+                <p>Optimized empennage/wing designs, performed stability analysis (CFD/DATCOM), and led the Air Vehicle Group for coordination and systems engineering.</p>
+                <span class="date" style="display:block; margin-top:10px; font-size:0.8rem;">March 2019 - Sep 2023</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- TEACHING & AWARDS -->
+    <section>
+        <h2>Teaching & Awards</h2>
+        <div class="job-block">
+            <div class="block-header">
+                <span class="role">Academic Performance Award (Pending)</span>
+                <span class="date">Dec 2025</span>
+            </div>
+            <span class="company">Istanbul Technical University</span>
+            <ul>
+                <li>Recognized for having the highest number of journal and conference publications in 2025.</li>
+            </ul>
+        </div>
+
+        <div class="job-block">
+            <div class="block-header">
+                <span class="role">Teaching Assistant</span>
+                <span class="date">Nov 2025</span>
+            </div>
+            <span class="company">Istanbul Technical University</span>
+            <ul>
+                <li>Provided teaching assistance for Discrete Mathematics.</li>
+                <li>Supervised research and publication efforts for over 10 B.Sc. and M.Sc. students.</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section>
+        <h2>Skills & Languages</h2>
+        <div class="skill-category">
+            <strong>Programming & Software:</strong> MATLAB, Simulink, USAF DATCOM
+        </div>
+        <div class="skill-category">
+            <strong>Languages:</strong> Turkish (Native), English (Professional), German (Beginner), Spanish (Beginner)
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Çağri Ege Altunkaya. Hosted on GitHub Pages.</p>
+    </footer>
+
+</div>
+
+</body>
+</html>
